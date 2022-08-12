@@ -18,6 +18,21 @@ public class List<T> {
         quantidade++;
     }
 
+    public T consultar(int index) {
+        if(index < quantidade) {
+            int i = 0;
+            Node<T> aux = inicio;
+            while(i != index) {
+                aux = aux.proximo;
+                i++;
+            }
+            return aux.informacao;
+        }
+        else {
+            return null;
+        }
+    }
+
     public String toString(){
         String s = "";
         Node<T> aux = inicio;
